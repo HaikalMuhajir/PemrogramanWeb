@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="styleSlideshow.css">
+        <script src="jquery-3.7.1.js"></script>
+        <script>
+            let i = 0;
+            $(document).ready(function () {
+                $('.slidertitle, #slider img').hide();
+                showNextImage();
+                setInterval(showNextImage, 3000);
+            });
+
+            function showNextImage() {
+                i++;
+                $('#sliderimage' + i).fadeIn(1100).delay(1100).fadeOut(1100);
+                $('#title' + i).fadeIn(1100).delay(1100).fadeOut(1100);
+
+                if (i === 3) {
+                    i = 0;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div id="slider">
+            <img src="img/gambar1.jpg" id="sliderimage1">
+            <div class="slidertitle" id="title1">Gambar1</div>
+            <img src="img/gambar2.jpg" id="sliderimage2">
+            <div class="slidertitle" id="title2">Gambar2</div>
+            <img src="img/gambar3.jpg" id="sliderimage3">
+            <div class="slidertitle" id="title3">Gambar3</div>
+        </div>
+    </body>
+</html>
